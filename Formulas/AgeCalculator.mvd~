@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="ageForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="ageForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Age Calculator"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="dateOfBirth"/>
+                <ContainerPropertyItem value="currentDate"/>
+                <ContainerPropertyItem value="ageResult"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="ageForm"/>
+        </DesignComponent>
+        <DesignComponent id="dateOfBirth" typeid="MIDP:javax.microedition.lcdui.DateField">
+            <Property name="label" value="STRING:Date of Birth"/>
+            <Property name="inputMode" value="DATE"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="currentDate" typeid="MIDP:javax.microedition.lcdui.DateField">
+            <Property name="label" value="STRING:Current Date"/>
+            <Property name="inputMode" value="DATE"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="ageResult" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Age = "/>
+            <Property name="text" value="STRING:&lt;enter your date of birth>"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_ageForm(), get_formulaValue());"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="ageForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="175"/>
+        <Node id="ageForm" x="120" y="288"/>
+    </FlowDocument>
+</MVDData>

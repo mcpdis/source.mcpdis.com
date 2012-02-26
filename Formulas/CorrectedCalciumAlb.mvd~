@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="ccaForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="ccaForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Corrected calcium (alb.)"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="calcium"/>
+                <ContainerPropertyItem value="albumin"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="calcium" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Calcium [mg/dL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="albumin" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Albumin [g/dL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Corrected Ca [mg/dL] = "/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="ccaForm"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_ccaForm(), get_formulaValue());"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="ccaForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="165" y="143"/>
+        <Node id="ccaForm" x="160" y="272"/>
+    </FlowDocument>
+</MVDData>

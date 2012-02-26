@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="ivDrForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="ivDrForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:IV Drip Rate"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="amountToInfuse"/>
+                <ContainerPropertyItem value="desiredDuration"/>
+                <ContainerPropertyItem value="dropFactor"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="ivDrForm"/>
+        </DesignComponent>
+        <DesignComponent id="amountToInfuse" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Amount to infuse [mL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="desiredDuration" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Desired Duration [min]"/>
+            <Property name="string" value="STRING: "/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="dropFactor" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Drop factor [gtt/mL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Drip rate [gtt/min] = "/>
+            <Property name="text" value="STRING:&lt;Enter Text>"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_ivDrForm(), get_formulaValue());\n"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="ivDrForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="133" y="127"/>
+        <Node id="ivDrForm" x="112" y="280"/>
+    </FlowDocument>
+</MVDData>

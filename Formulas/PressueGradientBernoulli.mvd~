@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="pressureGradientForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="pressureGradientForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Pressure Gradient (Bernoulli)"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="proxVelo"/>
+                <ContainerPropertyItem value="distalVelo"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="pressureGradientForm"/>
+        </DesignComponent>
+        <DesignComponent id="proxVelo" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Proximal velocity (V1) [m/s]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="distalVelo" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Distal velocity (V20) [m/s]"/>
+            <Property name="string" value="STRING: "/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Gradient [mmHg] ="/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_pressureGradientForm(), get_formulaValue());"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="pressureGradientForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="175"/>
+        <Node id="pressureGradientForm" x="128" y="296"/>
+    </FlowDocument>
+</MVDData>

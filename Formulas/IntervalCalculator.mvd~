@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="intervalCalcForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="intervalCalcForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Interval Calculator"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="firstDate"/>
+                <ContainerPropertyItem value="secondDate"/>
+                <ContainerPropertyItem value="intervalType"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="intervalCalcForm"/>
+        </DesignComponent>
+        <DesignComponent id="firstDate" typeid="MIDP:javax.microedition.lcdui.DateField">
+            <Property name="label" value="STRING:First Date"/>
+            <Property name="inputMode" value="DATE_TIME"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="secondDate" typeid="MIDP:javax.microedition.lcdui.DateField">
+            <Property name="label" value="STRING:Second Date"/>
+            <Property name="inputMode" value="DATE_TIME"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="intervalType" typeid="MIDP:javax.microedition.lcdui.ChoiceGroup">
+            <Property name="label" value="STRING:View in"/>
+            <Property name="choiceType" value="EXCLUSIVE"/>
+            <ContainerProperty name="commands"/>
+            <ContainerProperty name="elements">
+                <ContainerPropertyItem value="Midp2ChoiceElementDC1"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC2"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC3"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC4"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Interval [min] = "/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC1" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Minutes"/>
+            <Property name="image"/>
+            <Property name="selected" value="true"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC2" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Hours"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC3" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Days"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC4" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Weeks"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="151"/>
+        <Node id="intervalCalcForm" x="120" y="272"/>
+    </FlowDocument>
+</MVDData>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="transKGradForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="transKGradForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Transtabular K gradient"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="plK"/>
+                <ContainerPropertyItem value="plOsm"/>
+                <ContainerPropertyItem value="uk"/>
+                <ContainerPropertyItem value="uOsm"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="transKGradForm"/>
+        </DesignComponent>
+        <DesignComponent id="plK" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Pl K [mmol/L]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="plOsm" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Pl osm [mosm/kg]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="uk" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:U K [mmol/L]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="uOsm" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:U osm [mosm/kg]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="10"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:T.T.K.G. ="/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="159"/>
+        <Node id="transKGradForm" x="128" y="280"/>
+    </FlowDocument>
+</MVDData>

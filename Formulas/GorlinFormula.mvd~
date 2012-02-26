@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="gorlinForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="gorlinForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Gorlin Formula"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="cardiacOutput"/>
+                <ContainerPropertyItem value="heartRate"/>
+                <ContainerPropertyItem value="DFP"/>
+                <ContainerPropertyItem value="MVG"/>
+                <ContainerPropertyItem value="gorlinType"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="cardiacOutput" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Cardiac Output [L/min]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="6"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="heartRate" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Heart Rate [bpm]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="6"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="DFP" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Diastolic filling period [spb]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="6"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="MVG" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Mean valve gradient [mmHg]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="6"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="gorlinType" typeid="MIDP:javax.microedition.lcdui.ChoiceGroup">
+            <Property name="label" value="STRING:Type"/>
+            <Property name="choiceType" value="EXCLUSIVE"/>
+            <ContainerProperty name="commands"/>
+            <ContainerProperty name="elements">
+                <ContainerPropertyItem value="Midp2ChoiceElementDC1"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC3"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC2"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC4"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Mitral valve area [cm2] = "/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC1" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Mitral"/>
+            <Property name="image"/>
+            <Property name="selected" value="true"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC2" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Aortic"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC3" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Tricuspid"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC4" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Pulmonic"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="gorlinForm"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_gorlinForm(), get_formulaValue());"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="gorlinForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="165" y="151"/>
+        <Node id="gorlinForm" x="152" y="280"/>
+    </FlowDocument>
+</MVDData>

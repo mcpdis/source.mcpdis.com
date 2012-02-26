@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="postTestProbForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="postTestProbForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:Post-test probability"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction2"/>
+                <ContainerPropertyItem value="$CommandAction3"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="pretestProb"/>
+                <ContainerPropertyItem value="sensitivity"/>
+                <ContainerPropertyItem value="specificity"/>
+                <ContainerPropertyItem value="testResult"/>
+                <ContainerPropertyItem value="result"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="pretestProb" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Pretest prob [%]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="sensitivity" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Sensitivity [%]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="specificity" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Specificity [%]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="testResult" typeid="MIDP:javax.microedition.lcdui.ChoiceGroup">
+            <Property name="label" value="STRING:Test result"/>
+            <Property name="choiceType" value="EXCLUSIVE"/>
+            <ContainerProperty name="commands"/>
+            <ContainerProperty name="elements">
+                <ContainerPropertyItem value="Midp2ChoiceElementDC1"/>
+                <ContainerPropertyItem value="Midp2ChoiceElementDC2"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC1" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Positive"/>
+            <Property name="image"/>
+            <Property name="selected" value="true"/>
+        </DesignComponent>
+        <DesignComponent id="Midp2ChoiceElementDC2" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ChoiceElementDC">
+            <Property name="string" value="STRING:Negative"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+        </DesignComponent>
+        <DesignComponent id="result" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:Post-test prob. [%] ="/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_postTestProbForm(), get_formulaValue());"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="postTestProbForm"/>
+        </DesignComponent>
+        <DesignComponent id="backCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction3" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand"/>
+            <Property name="actionOrigin" value="postTestProbForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="135"/>
+        <Node id="postTestProbForm" x="120" y="288"/>
+    </FlowDocument>
+</MVDData>

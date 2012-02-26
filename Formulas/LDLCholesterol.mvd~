@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.1">
+    <DesignDocument designVersion="MIDP-1">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint">
+            <Property name="targetDisplayable" value="ldlCholesterolForm"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="ldlCholesterolForm" typeid="MIDP:javax.microedition.lcdui.Form">
+            <Property name="title" value="STRING:LDL Cholesterol"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+                <ContainerPropertyItem value="$CommandAction2"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="totalCholesterol"/>
+                <ContainerPropertyItem value="hdl"/>
+                <ContainerPropertyItem value="triglycerides"/>
+                <ContainerPropertyItem value="vldlResult"/>
+                <ContainerPropertyItem value="ldlResult"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="ldlCholesterolForm"/>
+        </DesignComponent>
+        <DesignComponent id="totalCholesterol" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Total Cholesterol [mg/dL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="hdl" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:HDL [mg/dL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="20"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="triglycerides" typeid="MIDP:javax.microedition.lcdui.TextField">
+            <Property name="label" value="STRING:Triglycerides [mg/dL]"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="5"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="vldlResult" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:VLDL [mg/dL] ="/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="ldlResult" typeid="MIDP:javax.microedition.lcdui.StringItem">
+            <Property name="label" value="STRING:LDL [mg/dL] = "/>
+            <Property name="text" value="STRING:"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="saveCommand" typeid="MIDP:javax.microedition.lcdui.Command">
+            <Property name="label" value="STRING:Save"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="ITEM"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction">
+            <Property name="preUserCode" value="Persistence.PatientSuiteDispatcher.invoke(this, get_ldlCholesterolForm(), get_formulaValue());\n"/>
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="saveCommand"/>
+            <Property name="actionOrigin" value="ldlCholesterolForm"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.0">
+        <Node id="$MobileDevice" x="125" y="143"/>
+        <Node id="ldlCholesterolForm" x="120" y="288"/>
+    </FlowDocument>
+</MVDData>
